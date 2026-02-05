@@ -11,3 +11,37 @@
 
 // VIẾT CODE Ở ĐÂY
 
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Nhap so phan tu n: ");
+    scanf("%d", &n);
+
+    int mang[n];
+    int i;
+
+    for (i = 0; i < n; i++) {
+        printf("Nhap phan tu mang[%d]: ", i);
+        scanf("%d", &mang[i]);
+    }
+
+    float tong = 0;
+    float tb;
+    int count = 0;
+
+    for (i = 0; i < n; i++) {
+        if (mang[i] % 3 == 0) {
+            tong += mang[i];   // cộng mảng i vào tổng
+            count++;           // tăng biến count lên 1
+        }
+    }
+
+    if (count > 0) {
+        tb = tong / count;
+        printf("Trung binh cong cac so chia het cho 3 la: %.2f\n", tb);
+    } else {
+        printf("Khong co so nao chia het cho 3 trong mang\n");
+    }
+    return 0;
+}
